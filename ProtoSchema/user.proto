@@ -1,0 +1,48 @@
+syntax = "proto3";
+
+message User {
+
+  enum UserType {
+    MANAGER = 0;
+    EDITOR = 1;
+    WRITER = 2;
+  }
+
+  string username = 1;
+  string userID = 2;
+  repeated Brand brands = 3;
+  UserType type = 4;
+};
+
+message Brand {
+  
+  enum BrandType {
+  	COASTAL_LIVING = 0;
+  	COOKING_LIGHT = 1;
+  	EW = 2;
+  	EXTRA_CRISPY = 3;
+  	FANSIDED = 4;
+  	F_AND_W = 5;
+  	FORTUNE = 6;
+  	FOUNDRY = 7;
+  	HEALTH = 8;
+  	HG = 9;
+  	INSTYLE = 10;
+  	LIFE_VR = 11;
+  	MONEY = 12;
+  	MRE = 13;
+  	PEOPLE_TV = 14;
+  	PEOPLE = 15;
+  	PESP = 16;
+  	REAL_SIMPLE = 17;
+  	SIKIDS = 18;
+  	SOUTHERN_LIVING = 19;
+  	SI = 20;
+  	THE_DRIVE = 21;
+  	TIME = 22;
+  	T_AND_L = 23;
+  }
+
+  string brand_name = 1;
+  BrandType type = 2;
+}
