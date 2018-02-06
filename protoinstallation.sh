@@ -81,6 +81,10 @@ installPip
 echo "Attempt to install flask if needed"
 installFlask
 
+#
+#install Swift Protocol Buffer here if needed
+#
+
 echo "--- Installing Google Protocol Buffer Library ---"
 echo "Attempt to install Google Compiler"
 attemptGoogleProtocolCompilerInstallation
