@@ -16,36 +16,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
     
     var window: UIWindow?
     
+    func application(_ application: UIApplication, open url: URL,
+                     sourceApplication: String?, annotation: Any) -> Bool {
+        
+        return AWSMobileClient.sharedInstance().interceptApplication(
+            application, open: url,
+            sourceApplication: sourceApplication,
+            annotation: annotation)
+        
+    }
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Initialize Google sign-in
+        // Initialize sign-in
         GIDSignIn.sharedInstance().clientID = "427934463979-ko17gaume90gc2geegli5rqtv06aitic.apps.googleusercontent.com"
         GIDSignIn.sharedInstance().delegate = self
-        AWSDDLog.add(AWSDDTTYLogger.sharedInstance)
-        AWSDDLog.sharedInstance.logLevel = .info
-        return AWSMobileClient.sharedInstance().interceptApplication(application, didFinishLaunchingWithOptions: launchOptions)
-    }
-    
-    @available(iOS 9.0, *)
-    func application(_ application: UIApplication,
-                     open url: URL, options: [UIApplicationOpenURLOptionsKey : Any])
-        -> Bool {
-            return GIDSignIn.sharedInstance().handle(url,
-                                                    sourceApplication:options[UIApplicationOpenURLOptionsKey.sourceApplication] as? String,
-                                                    annotation: [:])
-    }
-    
-    //for iOS 8, check availability
-    @available(iOS, introduced: 8.0, deprecated: 9.0)
-    func application(_ application: UIApplication,
-                     open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
-        return GIDSignIn.sharedInstance().handle(url, sourceApplication: sourceApplication!, annotation: annotation)
-    }
-    
-    //before iOS 9
-    func application(application: UIApplication,
-                     openURL url: URL, sourceApplication: String?, annotation: AnyObject) -> Bool {
-        return GIDSignIn.sharedInstance().handle(url, sourceApplication: sourceApplication, annotation: annotation)
+        
+        return AWSMobileClient.sharedInstance().interceptApplication(
+            application,
+            didFinishLaunchingWithOptions: launchOptions)
     }
     
     func applicationWillResignActive(_ application: UIApplication) {
@@ -70,7 +58,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
     
-    // GID Sign-in Delegate
+    // GID SIGN-IN DELEGATE
     
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!,
               withError error: Error!) {
@@ -93,6 +81,5 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         // Perform any operations when the user disconnects from app here.
         // ...
     }
-    
 }
 

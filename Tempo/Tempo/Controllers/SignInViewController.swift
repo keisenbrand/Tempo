@@ -7,20 +7,27 @@
 //
 
 import UIKit
-import GoogleSignIn
+import AWSAuthCore
+import AWSAuthUI
 
-class SignInViewController: UIViewController, GIDSignInUIDelegate {
+class SignInViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        GIDSignIn.sharedInstance().uiDelegate = self
-        
-        // Uncomment to automatically sign in the user.
-        //GIDSignIn.sharedInstance().signInSilently()
-        
-        // TODO(developer) Configure the sign-in button look/feel
-        // ...
+        if !AWSSignInManager.sharedInstance().isLoggedIn {
+            AWSAuthUIViewController
+                .presentViewController(with: self.navigationController!,
+                                       configuration: nil,
+                                       completionHandler: { (provider: AWSSignInProvider, error: Error?) in
+                                        if error != nil {
+                                            print("Error occurred: \(String(describing: error))")
+                                        } else {
+                                            print("sign in successful")
+                                            // Sign in successful.
+                                        }
+                })
+        }
     }
 
     override func didReceiveMemoryWarning() {
