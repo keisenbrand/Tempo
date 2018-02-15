@@ -14,7 +14,7 @@
 		9C4EC65B2020D84700642DC6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9C4EC65A2020D84700642DC6 /* Assets.xcassets */; };
 		9C4EC65E2020D84700642DC6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C4EC65C2020D84700642DC6 /* LaunchScreen.storyboard */; };
 		9C4EC6672021089400642DC6 /* user.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4EC6662021089400642DC6 /* user.pb.swift */; };
-		9C4EC66A2028C8A300642DC6 /* TempoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4EC6692028C8A300642DC6 /* TempoService.swift */; };
+		9C4EC66A2028C8A300642DC6 /* TempoAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4EC6692028C8A300642DC6 /* TempoAPIClient.swift */; };
 		9C4EC66C2028CB7A00642DC6 /* user+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4EC66B2028CB7A00642DC6 /* user+extension.swift */; };
 		9C4EC67020290E1B00642DC6 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4EC66F20290E1B00642DC6 /* SignInViewController.swift */; };
 		9C4EC672202A0D6200642DC6 /* awsconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = 9C4EC671202A0D6200642DC6 /* awsconfiguration.json */; };
@@ -31,7 +31,7 @@
 		9C4EC65D2020D84700642DC6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9C4EC65F2020D84700642DC6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9C4EC6662021089400642DC6 /* user.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = user.pb.swift; sourceTree = "<group>"; };
-		9C4EC6692028C8A300642DC6 /* TempoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempoService.swift; sourceTree = "<group>"; };
+		9C4EC6692028C8A300642DC6 /* TempoAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempoAPIClient.swift; sourceTree = "<group>"; };
 		9C4EC66B2028CB7A00642DC6 /* user+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "user+extension.swift"; sourceTree = "<group>"; };
 		9C4EC66F20290E1B00642DC6 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		9C4EC671202A0D6200642DC6 /* awsconfiguration.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = awsconfiguration.json; sourceTree = "<group>"; };
@@ -87,7 +87,7 @@
 				9C4EC65A2020D84700642DC6 /* Assets.xcassets */,
 				9C4EC65C2020D84700642DC6 /* LaunchScreen.storyboard */,
 				9C4EC65F2020D84700642DC6 /* Info.plist */,
-				9C4EC6692028C8A300642DC6 /* TempoService.swift */,
+				9C4EC6692028C8A300642DC6 /* TempoAPIClient.swift */,
 			);
 			path = Tempo;
 			sourceTree = "<group>";
@@ -275,7 +275,7 @@
 				9C4EC67020290E1B00642DC6 /* SignInViewController.swift in Sources */,
 				9C4EC6562020D84700642DC6 /* ViewController.swift in Sources */,
 				9C4EC6542020D84700642DC6 /* AppDelegate.swift in Sources */,
-				9C4EC66A2028C8A300642DC6 /* TempoService.swift in Sources */,
+				9C4EC66A2028C8A300642DC6 /* TempoAPIClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

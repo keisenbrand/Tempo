@@ -1,5 +1,5 @@
 //
-//  TempoService.swift
+//  TempoAPIClient.swift
 //  Tempo
 //
 //  Created by Katherine Rose Eisenbrand on 2/5/18.
@@ -9,7 +9,7 @@
 import Foundation
 import Alamofire
 
-class TempoService {
+class TempoAPIClient {
     static let shared = TempoService() // 1
     let url = "http://127.0.0.1:5000"
     

@@ -1,26 +1,50 @@
+from Database import DynamoDBHelper
+from Schema import DynamoDBSchemaHelper
 from flask import Flask
+from google.protobuf.json_format import MessageToJson
+
 import user_pb2
-import TempoDict
+
+DEBUG = True
 
 app = Flask(__name__)
 
+dynamoDbSchemaHelper = DynamoDBSchemaHelper()
+dynamoDbHelper = DynamoDBHelper()
+
 # Get current user - treat this as whoever is logged into the app
+
+
 @app.route("/currentUser")
 def getCurrentUser():
-    user = user_pb2.User()
-    user.username = "eisenbrk"
-    user.userID = "8059901289"
-    brands = []
-    for brandDict in TempoDict.brands:
-        brand = user_pb2.Brand()
-        brand.brand_name = brandDict['brand_name']
-        brand.type = user_pb2.Brand.PEOPLE
-        brands.append(brand)
-    user.brands.extend(brands)
-    user.type = user_pb2.User.WRITER
-    str = user.SerializeToString()
+    user = dynamoDbHelper.table('users') \
+        .get({
+            'username': "amurray"
+        }, user_pb2.User())
 
-    return str
+    if DEBUG:
+        return MessageToJson(user)
+    return user.SerializeToString()
+
+
+@app.route("/deleteUser")
+def getUsers():
+    user = dynamoDbHelper.table('users') \
+        .delete({
+            'username': "amurray"
+        }, user_pb2.User())
+    print("deleted")
+    deletedUser = dynamoDbHelper.table('users') \
+        .get({
+            'username': "amurray"
+        }, user_pb2.User())
+    print(deletedUser)
+    if DEBUG:
+        return MessageToJson(user)
+    return user.SerializeToString()
 
 if __name__ == "__main__":
+    dynamoDbHelper.deleteTable()
+    dynamoDbSchemaHelper.generateTables()
+    dynamoDbHelper.generateDummyData()
     app.run()
