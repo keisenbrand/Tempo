@@ -10,17 +10,17 @@ import Foundation
 import Alamofire
 
 class TempoAPIClient {
-    static let shared = TempoService() // 1
+    static let shared = TempoAPIClient() // 1
     let url = "http://127.0.0.1:5000"
     
     private init() { }
     
-    func getCurrentUser(_ completion: @escaping (User?) -> ()) { // 2
-        let path = "/currentUser"
+    func getCurrentUser(username: String, completion: @escaping (User?) -> ()) { // 2
+        let path = "/currentUser/" + username
         Alamofire.request("\(url)\(path)").responseData { response in
             if let data = response.result.value { // 3
-                let contact = try? User(serializedData: data) // 4
-                completion(contact)
+                let user = try? User(serializedData: data) // 4
+                completion(user)
             }
             completion(nil)
         }

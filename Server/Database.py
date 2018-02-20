@@ -89,31 +89,36 @@ class DynamoDBTableHelper:
     def put(self, proto):
         protoJson = MessageToJson(proto)
         dbMap = json.loads(protoJson)
-        return self.table.put_item(
+        responseMap = self.table.put_item(
             Item=dbMap
         )
+        responseJson = json.dumps(responseMap)
+        return responseJson
 
     def get(self, key, proto):
-        print(key)
         protoMap = self.table.get_item(
             Key=key
         )['Item']
         protoJson = json.dumps(protoMap)
-        print(protoJson)
         return Parse(protoJson, proto)
 
-    def update(self, key, proto):
-        protoJson = MessageToJson(proto)
-        dbMap = json.loads(protoJson)
-        return self.table.update_item(
-            Key=key,
-            UpdateExpression="set username = username",
+    # Update Brand preferences by username
+    def update(self, key, newBrandsList):
+        print(newBrandsList)
+        response = self.table.update_item(
+            Key=key,  # username
+            UpdateExpression="set brands = :b",
             ExpressionAttributeValues={
-                'username': dbMap
-            }
+                ':b': []
+            },
+            ReturnValues="UPDATED_NEW"
         )
+        print(json.dumps(response))
+        return response
 
-    def delete(self, key):
-        return self.table.delete_item(
+    def remove(self, key):
+        responseMap = self.table.delete_item(
             Key=key
         )
+        responseJson = json.dumps(responseMap)
+        return responseJson

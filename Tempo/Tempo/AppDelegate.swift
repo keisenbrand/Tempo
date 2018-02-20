@@ -12,28 +12,30 @@ import GoogleSignIn
 import AWSCore
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
+//class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
     
-    func application(_ application: UIApplication, open url: URL,
-                     sourceApplication: String?, annotation: Any) -> Bool {
-        
-        return AWSMobileClient.sharedInstance().interceptApplication(
-            application, open: url,
-            sourceApplication: sourceApplication,
-            annotation: annotation)
-        
-    }
+//    func application(_ application: UIApplication, open url: URL,
+//                     sourceApplication: String?, annotation: Any) -> Bool {
+//
+//        return AWSMobileClient.sharedInstance().interceptApplication(
+//            application, open: url,
+//            sourceApplication: sourceApplication,
+//            annotation: annotation)
+//
+//    }
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Initialize sign-in
-        GIDSignIn.sharedInstance().clientID = "427934463979-ko17gaume90gc2geegli5rqtv06aitic.apps.googleusercontent.com"
-        GIDSignIn.sharedInstance().delegate = self
-        
-        return AWSMobileClient.sharedInstance().interceptApplication(
-            application,
-            didFinishLaunchingWithOptions: launchOptions)
+//        GIDSignIn.sharedInstance().clientID = "427934463979-ko17gaume90gc2geegli5rqtv06aitic.apps.googleusercontent.com"
+//        GIDSignIn.sharedInstance().delegate = self
+//
+//        return AWSMobileClient.sharedInstance().interceptApplication(
+//            application,
+//            didFinishLaunchingWithOptions: launchOptions)
+        return true
     }
     
     func applicationWillResignActive(_ application: UIApplication) {
@@ -60,26 +62,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
     
     // GID SIGN-IN DELEGATE
     
-    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!,
-              withError error: Error!) {
-        if let error = error {
-            print("\(error.localizedDescription)")
-        } else {
-            // Perform any operations on signed in user here.
-            let userId = user.userID                  // For client-side use only!
-            let idToken = user.authentication.idToken // Safe to send to the server
-            let fullName = user.profile.name
-            let givenName = user.profile.givenName
-            let familyName = user.profile.familyName
-            let email = user.profile.email
-            // ...
-        }
-    }
-    
-    func sign(_ signIn: GIDSignIn!, didDisconnectWith user: GIDGoogleUser!,
-              withError error: Error!) {
-        // Perform any operations when the user disconnects from app here.
-        // ...
-    }
+//    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!,
+//              withError error: Error!) {
+//        if let error = error {
+//            print("\(error.localizedDescription)")
+//        } else {
+//            // Perform any operations on signed in user here.
+//            let userId = user.userID                  // For client-side use only!
+//            let idToken = user.authentication.idToken // Safe to send to the server
+//            let fullName = user.profile.name
+//            let givenName = user.profile.givenName
+//            let familyName = user.profile.familyName
+//            let email = user.profile.email
+//            // ...
+//        }
+//    }
+//
+//    func sign(_ signIn: GIDSignIn!, didDisconnectWith user: GIDGoogleUser!,
+//              withError error: Error!) {
+//        // Perform any operations when the user disconnects from app here.
+//        // ...
+//    }
 }
 

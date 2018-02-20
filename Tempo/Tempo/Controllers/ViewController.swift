@@ -20,8 +20,8 @@ class ViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
-        TempoService.shared.getCurrentUser { user in
+        let username = "keisenbrand";
+        TempoAPIClient.shared.getCurrentUser(username: username) { user in
             if let user = user {
                 self.configure(user)
             }
