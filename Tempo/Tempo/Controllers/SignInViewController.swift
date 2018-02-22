@@ -15,19 +15,19 @@ class SignInViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        if !AWSSignInManager.sharedInstance().isLoggedIn {
-            AWSAuthUIViewController
-                .presentViewController(with: self.navigationController!,
-                                       configuration: nil,
-                                       completionHandler: { (provider: AWSSignInProvider, error: Error?) in
-                                        if error != nil {
-                                            print("Error occurred: \(String(describing: error))")
-                                        } else {
-                                            print("sign in successful")
-                                            // Sign in successful.
-                                        }
-                })
-        }
+//        if !AWSSignInManager.sharedInstance().isLoggedIn {
+//            AWSAuthUIViewController
+//                .presentViewController(with: self.navigationController!,
+//                                       configuration: nil,
+//                                       completionHandler: { (provider: AWSSignInProvider, error: Error?) in
+//                                        if error != nil {
+//                                            print("Error occurred: \(String(describing: error))")
+//                                        } else {
+//                                            print("sign in successful")
+//                                            // Sign in successful.
+//                                        }
+//                })
+//        }
     }
 
     override func didReceiveMemoryWarning() {

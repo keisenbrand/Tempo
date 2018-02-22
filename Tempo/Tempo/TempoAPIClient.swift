@@ -20,6 +20,7 @@ class TempoAPIClient {
         Alamofire.request("\(url)\(path)").responseData { response in
             if let data = response.result.value { // 3
                 let user = try? User(serializedData: data) // 4
+                print(data)
                 completion(user)
             }
             completion(nil)

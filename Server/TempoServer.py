@@ -4,6 +4,7 @@ from flask import Flask
 from google.protobuf.json_format import MessageToJson
 
 import user_pb2
+import BrandsDict
 
 DEBUG = False
 
@@ -73,6 +74,19 @@ def updateUser():
               'username': "keisenbrand"
           }, user_pb2.User()))
     return response
+
+
+@app.route("/getBrands")
+def getBrands():
+    brandsList = []
+    for brandDict in BrandsDict.brands:
+        brand = user_pb2.Brand(
+            brand_name=brandDict['brand_name'],
+            type=brandDict['type']
+            )
+        brandsList.append(brand)
+
+    return brandsList
 
 if __name__ == "__main__":
     dynamoDbHelper.deleteTable()
