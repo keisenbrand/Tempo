@@ -1,9 +1,43 @@
 PODS:
   - Alamofire (4.6.0)
+  - AWSAuthCore (2.6.11):
+    - AWSCore (= 2.6.11)
+  - AWSAuthUI (2.6.11):
+    - AWSAuthCore (= 2.6.11)
+    - AWSCore (= 2.6.11)
+  - AWSCore (2.6.11)
+  - AWSGoogleSignIn (2.6.11):
+    - AWSAuthCore (= 2.6.11)
+  - AWSMobileClient (2.6.11):
+    - AWSAuthCore (= 2.6.11)
+  - GoogleSignIn (4.1.2):
+    - GoogleToolboxForMac/NSDictionary+URLArguments (~> 2.1)
+    - GoogleToolboxForMac/NSString+URLArguments (~> 2.1)
+    - GTMOAuth2 (~> 1.0)
+    - GTMSessionFetcher/Core (~> 1.1)
+  - GoogleToolboxForMac/DebugUtils (2.1.3):
+    - GoogleToolboxForMac/Defines (= 2.1.3)
+  - GoogleToolboxForMac/Defines (2.1.3)
+  - GoogleToolboxForMac/NSDictionary+URLArguments (2.1.3):
+    - GoogleToolboxForMac/DebugUtils (= 2.1.3)
+    - GoogleToolboxForMac/Defines (= 2.1.3)
+    - GoogleToolboxForMac/NSString+URLArguments (= 2.1.3)
+  - GoogleToolboxForMac/NSString+URLArguments (2.1.3)
+  - GTMOAuth2 (1.1.6):
+    - GTMSessionFetcher (~> 1.1)
+  - GTMSessionFetcher (1.1.13):
+    - GTMSessionFetcher/Full (= 1.1.13)
+  - GTMSessionFetcher/Core (1.1.13)
+  - GTMSessionFetcher/Full (1.1.13):
+    - GTMSessionFetcher/Core (= 1.1.13)
   - SwiftProtobuf (1.0.2)
 
 DEPENDENCIES:
   - Alamofire
+  - AWSAuthUI (~> 2.6.6)
+  - AWSGoogleSignIn (~> 2.6.6)
+  - AWSMobileClient (~> 2.6.6)
+  - GoogleSignIn (~> 4.0)
   - SwiftProtobuf (from `https://github.com/apple/swift-protobuf.git`, tag `1.0.2`)
 
 EXTERNAL SOURCES:
@@ -18,8 +52,17 @@ CHECKOUT OPTIONS:
 
 SPEC CHECKSUMS:
   Alamofire: f41a599bd63041760b26d393ec1069d9d7b917f4
+  AWSAuthCore: 400f64223dc7509bf2c2b320c25f03c9281e2aac
+  AWSAuthUI: 6259cddd495ea178bd7da560453aef9e7909e0c1
+  AWSCore: a461695bf302a32a366768bf36056be3a2c87d8d
+  AWSGoogleSignIn: f25ba5a7a5840bb6d3aab62ce44c47cf126b9c7d
+  AWSMobileClient: 6ba0612943c6dee6b7a5bdf288296c6a8dfffb13
+  GoogleSignIn: d9ef55b10f0aa401a5de2747f59b725e4b9732ac
+  GoogleToolboxForMac: 2501e2ad72a52eb3dfe7bd9aee7dad11b858bd20
+  GTMOAuth2: c77fe325e4acd453837e72d91e3b5f13116857b2
+  GTMSessionFetcher: 5bb1eae636127de695590f50e7d248483eb891e6
   SwiftProtobuf: 4af9654f18ddeb5be531a6d02b852ad256f239bf
 
-PODFILE CHECKSUM: 0208afa0e2eefb64052ce1db67813d148303b755
+PODFILE CHECKSUM: 938b9dc218451df480e68e0f4694571006006023
 
 COCOAPODS: 1.3.1
