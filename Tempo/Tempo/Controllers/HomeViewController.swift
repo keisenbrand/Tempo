@@ -11,7 +11,7 @@ import UIKit
 class HomeViewController: UIViewController {
     
     @IBOutlet weak var blackView: UIView!
-    @IBOutlet weak var menuView: UITableView!
+    @IBOutlet weak var menuView: MenuTableViewController!
     @IBOutlet weak var constraintMenuWidth: NSLayoutConstraint!
     @IBOutlet weak var constraintMenuLeft: NSLayoutConstraint!
     @IBOutlet var gestureScreenEdgePan: UIScreenEdgePanGestureRecognizer!
