@@ -11,7 +11,7 @@
 		9C02F556203CD31000F28582 /* NUXViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C02F555203CD31000F28582 /* NUXViewController.swift */; };
 		9C02F55B203CD94800F28582 /* BrandCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C02F55A203CD94800F28582 /* BrandCell.swift */; };
 		9C4EC6542020D84700642DC6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4EC6532020D84700642DC6 /* AppDelegate.swift */; };
-		9C4EC6562020D84700642DC6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4EC6552020D84700642DC6 /* ViewController.swift */; };
+		9C4EC6562020D84700642DC6 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4EC6552020D84700642DC6 /* HomeViewController.swift */; };
 		9C4EC6592020D84700642DC6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C4EC6572020D84700642DC6 /* Main.storyboard */; };
 		9C4EC65B2020D84700642DC6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9C4EC65A2020D84700642DC6 /* Assets.xcassets */; };
 		9C4EC65E2020D84700642DC6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C4EC65C2020D84700642DC6 /* LaunchScreen.storyboard */; };
@@ -29,7 +29,7 @@
 		9C02F55A203CD94800F28582 /* BrandCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrandCell.swift; sourceTree = "<group>"; };
 		9C4EC6502020D84700642DC6 /* Tempo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tempo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C4EC6532020D84700642DC6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		9C4EC6552020D84700642DC6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		9C4EC6552020D84700642DC6 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		9C4EC6582020D84700642DC6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9C4EC65A2020D84700642DC6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9C4EC65D2020D84700642DC6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -117,7 +117,7 @@
 		9C4EC6682028C88500642DC6 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				9C4EC6552020D84700642DC6 /* ViewController.swift */,
+				9C4EC6552020D84700642DC6 /* HomeViewController.swift */,
 				9C4EC66F20290E1B00642DC6 /* SignInViewController.swift */,
 				9C02F555203CD31000F28582 /* NUXViewController.swift */,
 			);
@@ -289,7 +289,7 @@
 				9C4EC66C2028CB7A00642DC6 /* user+extension.swift in Sources */,
 				9C02F556203CD31000F28582 /* NUXViewController.swift in Sources */,
 				9C4EC67020290E1B00642DC6 /* SignInViewController.swift in Sources */,
-				9C4EC6562020D84700642DC6 /* ViewController.swift in Sources */,
+				9C4EC6562020D84700642DC6 /* HomeViewController.swift in Sources */,
 				9C4EC6542020D84700642DC6 /* AppDelegate.swift in Sources */,
 				9C4EC66A2028C8A300642DC6 /* TempoAPIClient.swift in Sources */,
 			);
