@@ -40,6 +40,9 @@
                         <viewLayoutGuide key="safeArea" id="lIq-SY-WZt"/>
                     </view>
                     <navigationItem key="navigationItem" id="Xh8-gJ-NFV"/>
+                    <connections>
+                        <segue destination="5Qy-QS-ETf" kind="show" identifier="signInToBrandsSegue" id="g3d-ar-Csx"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DS9-VQ-Dh9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -48,7 +51,7 @@
         <!--View Controller-->
         <scene sceneID="zDn-v2-8F9">
             <objects>
-                <viewController id="5Qy-QS-ETf" customClass="NUXViewController" customModule="Tempo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="NUXViewController" id="5Qy-QS-ETf" customClass="NUXViewController" customModule="Tempo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="FhI-Lr-Z3Q">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -108,7 +111,8 @@
                                     <color key="titleColor" red="0.96862745100000003" green="0.98431372549999996" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
                                 <connections>
-                                    <action selector="donePressed:" destination="5Qy-QS-ETf" eventType="touchUpInside" id="dS1-4m-IEA"/>
+                                    <action selector="donePressed:" destination="5Qy-QS-ETf" eventType="touchUpInside" id="yVe-Xw-b92"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" identifier="brandsToHomeSegue" id="rHZ-6R-tXy"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="select the brands you want to check up on" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yhk-Uq-sFp">

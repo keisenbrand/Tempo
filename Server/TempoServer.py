@@ -28,6 +28,12 @@ def getCurrentUser(username):
     return user.SerializeToString()
 
 
+@app.route("/getUsers")
+def getUsers():
+    users = dynamoDbHelper.table('users')
+    return MessageToJson(users)
+
+
 @app.route("/deleteUser/<username>")
 def deleteUser(username):
     response = dynamoDbHelper.table('users') \
@@ -54,6 +60,10 @@ def addUser():
     )
     response = dynamoDbHelper.table('users') \
         .put(user)
+    print(dynamoDbHelper.table('users')
+          .get({
+              'username': "newbie"
+          }, user_pb2.User()))
     return response
 
 

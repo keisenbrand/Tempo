@@ -29,12 +29,12 @@ class HomeViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-//        let username = "keisenbrand";
-//        TempoAPIClient.shared.getCurrentUser(username: username) { user in
-//            if let user = user {
-//                self.configure(user)
-//            }
-//        }
+        let username = "keisenbrand";
+        TempoAPIClient.shared.getCurrentUser(username: username) { user in
+            if let user = user {
+                self.configure(user)
+            }
+        }
     }
     
     func openMenu() {
