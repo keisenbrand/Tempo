@@ -81,9 +81,10 @@ class NUXViewController: UIViewController, UICollectionViewDataSource, UICollect
         print(selectedBrands)
     }
     
-    @IBAction func donePressed(_ sender: UIButton) {
-        //TODO: save user and navigate to home screen
-        print(selectedBrands)
+    @IBAction func donePressed(_ sender: Any) {
+        // save user with brands
+        
+        // segue to home
     }
     
     /*

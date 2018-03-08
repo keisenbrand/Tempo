@@ -9,15 +9,15 @@
 import UIKit
 import GoogleSignIn
 
-class SignInViewController: UIViewController, GIDSignInUIDelegate {
+class SignInViewController: UIViewController, GIDSignInUIDelegate, GIDSignInDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        GIDSignIn.sharedInstance().clientID = "427934463979-ko17gaume90gc2geegli5rqtv06aitic.apps.googleusercontent.com"
+        GIDSignIn.sharedInstance().delegate = self
         GIDSignIn.sharedInstance().uiDelegate = self
         GIDSignIn.sharedInstance().signInSilently()
-        
-        // TODO(developer) Configure the sign-in button look/feel
-        // ...
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -25,6 +25,29 @@ class SignInViewController: UIViewController, GIDSignInUIDelegate {
         // Dispose of any resources that can be recreated.
     }
     
+    //GID Sign-In Delegate
+    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
+        if let error = error {
+            print("\(error.localizedDescription)")
+        } else {
+            let userId = user.userID                  // For client-side use only!
+            let idToken = user.authentication.idToken // Safe to send to the server
+            let fullName = user.profile.name
+            let email = user.profile.email
+            print(GIDSignIn.sharedInstance().currentUser)
+            print(userId)
+            print(idToken)
+            print(fullName)
+            print(email)
+            let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            let brandsViewController = storyBoard.instantiateViewController(withIdentifier: "NUXViewController") as? NUXViewController
+            self.navigationController?.pushViewController(brandsViewController!, animated: true)
+        }
+    }
+    
+    func sign(_ signIn: GIDSignIn!, didDisconnectWith user: GIDGoogleUser!, withError error: Error!) {
+        
+    }
 
     /*
     // MARK: - Navigation

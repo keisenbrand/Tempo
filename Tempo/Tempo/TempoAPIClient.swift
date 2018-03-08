@@ -25,4 +25,15 @@ class TempoAPIClient {
             completion(nil)
         }
     }
+    
+    func addUser(username: String, userID: String, type: User.UserType, brands: [Brand], completion: @escaping (User?) -> ()) { // 2
+//        let path = "/addUser/" + username + "/" + userID + "/" + type.userTypeToString() + "/" + brands
+//        Alamofire.request("\(url)\(path)").responseData { response in
+//            if let data = response.result.value { // 3
+//                let user = try? User(serializedData: data) // 4
+//                completion(user)
+//            }
+//            completion(nil)
+//        }
+    }
 }
