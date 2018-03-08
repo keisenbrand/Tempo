@@ -10,7 +10,7 @@ import UIKit
 import GoogleSignIn
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
     
@@ -47,27 +47,5 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
-    
-    // GID SIGN-IN DELEGATE
-    
-        func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!,
-                  withError error: Error!) {
-            if let error = error {
-                print("\(error.localizedDescription)")
-            } else {
-                let userId = user.userID                  // For client-side use only!
-                let idToken = user.authentication.idToken // Safe to send to the server
-                let fullName = user.profile.name
-                let email = user.profile.email
-                print(GIDSignIn.sharedInstance().currentUser)
-                print(fullName)
-            }
-        }
-    
-        func sign(_ signIn: GIDSignIn!, didDisconnectWith user: GIDGoogleUser!,
-                  withError error: Error!) {
-            // Perform any operations when the user disconnects from app here.
-            // ...
-        }
 }
 
