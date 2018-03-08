@@ -34,6 +34,14 @@ class SignInViewController: UIViewController, GIDSignInUIDelegate, GIDSignInDele
             let idToken = user.authentication.idToken // Safe to send to the server
             let fullName = user.profile.name
             let email = user.profile.email
+<<<<<<< HEAD
+=======
+            print(GIDSignIn.sharedInstance().currentUser)
+            print(userId)
+            print(idToken)
+            print(fullName)
+            print(email)
+>>>>>>> 819d716c03c57783bf93879819265d2e71d0d5fd
             let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
             let brandsViewController = storyBoard.instantiateViewController(withIdentifier: "NUXViewController") as? NUXViewController
             self.navigationController?.pushViewController(brandsViewController!, animated: true)
