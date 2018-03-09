@@ -36,6 +36,10 @@ class SignInViewController: UIViewController, GIDSignInUIDelegate, GIDSignInDele
             let email = user.profile.email
             let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
             let brandsViewController = storyBoard.instantiateViewController(withIdentifier: "NUXViewController") as? NUXViewController
+            brandsViewController?.username = email
+            brandsViewController?.userID = userId
+            brandsViewController?.idToken = idToken
+            brandsViewController?.fullName = fullName
             self.navigationController?.pushViewController(brandsViewController!, animated: true)
         }
     }
