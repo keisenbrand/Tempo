@@ -31,7 +31,7 @@ class NUXViewController: UIViewController, UICollectionViewDataSource, UICollect
         collectionView.dataSource = self
         collectionView.delegate = self
         collectionView.allowsMultipleSelection = true
-        collectionView.contentInset = UIEdgeInsets(top: 15, left: 15, bottom: 15, right: 15)
+        collectionView.contentInset = UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
     }
 
     override func didReceiveMemoryWarning() {
@@ -48,6 +48,7 @@ class NUXViewController: UIViewController, UICollectionViewDataSource, UICollect
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "BrandCell", for: indexPath) as! BrandCell
+        cell.layer.borderColor = UIColor(red:0.41, green:0.62, blue:0.93, alpha:1.0).cgColor
         
         let brand = brands![indexPath.row]
         let brandName = brand.object(forKey: "brand_name") as? String
@@ -63,13 +64,6 @@ class NUXViewController: UIViewController, UICollectionViewDataSource, UICollect
         overlayView.backgroundColor = UIColor.black
         overlayView.alpha = 0.3
         cell.overlayView = overlayView
-//        cell.selectedBackgroundView = {
-//            let selectedView = UIView.init()
-//            selectedView.backgroundColor = .clear
-//            selectedView.layer.borderWidth = 3
-//            selectedView.layer.borderColor = UIColor(red:0.41, green:0.62, blue:0.93, alpha:1.0).cgColor
-//            return selectedView
-//        }()
         return cell
     }
     
@@ -81,13 +75,16 @@ class NUXViewController: UIViewController, UICollectionViewDataSource, UICollect
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let selectedBrand = brands![indexPath.row]
         selectedBrands.add(selectedBrand)
+        let cell = collectionView.cellForItem(at: indexPath)
+        cell?.layer.borderWidth = 3
         print(selectedBrands)
     }
     
     func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
         let deselectedBrand = brands![indexPath.row]
-        print(deselectedBrand)
         selectedBrands.removeObject(identicalTo: deselectedBrand)
+        let cell = collectionView.cellForItem(at: indexPath)
+        cell?.layer.borderWidth = 0
         print(selectedBrands)
     }
     
