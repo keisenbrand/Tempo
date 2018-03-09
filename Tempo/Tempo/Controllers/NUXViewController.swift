@@ -14,6 +14,9 @@ class NUXViewController: UIViewController, UICollectionViewDataSource, UICollect
     @IBOutlet weak var doneButton: UIButton!
     
     var username: String?
+    var userID: String?
+    var idToken: String?
+    var fullName: String?
     var brands: [NSDictionary]?
     var selectedBrands: NSMutableArray = []
     let cellHeight: CGFloat = 110
@@ -32,6 +35,10 @@ class NUXViewController: UIViewController, UICollectionViewDataSource, UICollect
         collectionView.delegate = self
         collectionView.allowsMultipleSelection = true
         collectionView.contentInset = UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
+        print(username)
+        print(userID)
+        print(fullName)
+        print(idToken)
     }
 
     override func didReceiveMemoryWarning() {
