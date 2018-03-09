@@ -8,7 +8,7 @@
 
 import UIKit
 
-class NUXViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
+class NUXViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var doneButton: UIButton!
@@ -16,12 +16,13 @@ class NUXViewController: UIViewController, UICollectionViewDataSource, UICollect
     var username: String?
     var brands: [NSDictionary]?
     var selectedBrands: NSMutableArray = []
+    let cellHeight: CGFloat = 110
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         username = "n00b"
-        brands = [["brand_name": "Coastal Living", "type": "COASTAL_LIVING"], ["brand_name": "Cooking Light", "type": "COOKING_LIGHT"], ["brand_name": "Entertainment Weekly", "type": "EW"], ["brand_name": "Extra Crispy", "type": "EXTRA_CRISPY"], ["brand_name": "Fansided", "type": "FANSIDED"], ["brand_name": "Food & Wine", "type": "F_AND_W"], ["brand_name": "Fortune", "type": "FORTUNE"], ["brand_name": "Foundry", "type": "FOUNDRY"]]
+        brands = [["brand_name": "Coastal Living", "type": "COASTAL_LIVING"], ["brand_name": "Cooking Light", "type": "COOKING_LIGHT"], ["brand_name": "Entertainment Weekly", "type": "EW"], ["brand_name": "Extra Crispy", "type": "EXTRA_CRISPY"], ["brand_name": "Fansided", "type": "FANSIDED"], ["brand_name": "Food & Wine", "type": "F_AND_W"], ["brand_name": "Fortune", "type": "FORTUNE"], ["brand_name": "Foundry", "type": "FOUNDRY"], ["brand_name": "Health", "type": "HEALTH"], ["brand_name": "Hello Giggles", "type": "HG"], ["brand_name": "InStyle", "type": "INSTYLE"], ["brand_name": "LIFE VR", "type": "LIFE_VR"], ["brand_name": "Money", "type": "MONEY"], ["brand_name": "myrecipes", "type": "MRE"], ["brand_name": "PEOPLE TV", "type": "PEOPLE_TV"], ["brand_name": "PEOPLE", "type": "PEOPLE"], ["brand_name": "People En Español", "type": "PESP"], ["brand_name": "Real Simple", "type": "REAL_SIMPLE"], ["brand_name": "SI Kids", "type": "SI_KIDS"], ["brand_name": "Southern Living", "type": "SOUTHERN_LIVING"], ["brand_name": "Sports Illustrated", "type": "SI"], ["brand_name": "The Drive", "type": "THE_DRIVE"], ["brand_name": "TIME", "type": "TIME"], ["brand_name": "Travel + Leisure", "type": "T_AND_L"]]
     }
     
     override func viewDidLoad() {
@@ -30,18 +31,7 @@ class NUXViewController: UIViewController, UICollectionViewDataSource, UICollect
         collectionView.dataSource = self
         collectionView.delegate = self
         collectionView.allowsMultipleSelection = true
-    }
-    
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        
-        let layout = UICollectionViewFlowLayout()
-        layout.itemSize = CGSize(width: 153, height: 110)
-        layout.minimumInteritemSpacing = 8
-        layout.minimumLineSpacing = 8
-        layout.headerReferenceSize = CGSize(width: 0, height: 0)
-        layout.sectionInset = UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8)
-        collectionView.collectionViewLayout = layout
+        collectionView.contentInset = UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
     }
 
     override func didReceiveMemoryWarning() {
@@ -58,26 +48,43 @@ class NUXViewController: UIViewController, UICollectionViewDataSource, UICollect
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "BrandCell", for: indexPath) as! BrandCell
+        cell.layer.borderColor = UIColor(red:0.41, green:0.62, blue:0.93, alpha:1.0).cgColor
         
         let brand = brands![indexPath.row]
-        cell.titleLabel.text = brand.object(forKey: "brand_name") as? String
-        let selectedView = UIView.init()
-        selectedView.backgroundColor = UIColor.lightGray
-        cell.selectedBackgroundView = selectedView
+        let brandName = brand.object(forKey: "brand_name") as? String
+        cell.titleLabel.text = brandName
+        let photo = UIImage(named: brandName!)
+        if let photo = photo {
+            cell.imageView.image = photo
+            cell.imageView.contentMode = .scaleAspectFill
+        } else {
+            cell.imageView.image = nil
+        }
+        let overlayView = UIView(frame: cell.frame)
+        overlayView.backgroundColor = UIColor.black
+        overlayView.alpha = 0.3
+        cell.overlayView = overlayView
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let itemWidth = (collectionView.frame.width - (collectionView.contentInset.left + collectionView.contentInset.right + 10)) / 2
+        return CGSize(width: itemWidth, height: cellHeight)
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let selectedBrand = brands![indexPath.row]
-        print(selectedBrand)
         selectedBrands.add(selectedBrand)
+        let cell = collectionView.cellForItem(at: indexPath)
+        cell?.layer.borderWidth = 3
         print(selectedBrands)
     }
     
     func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
         let deselectedBrand = brands![indexPath.row]
-        print(deselectedBrand)
         selectedBrands.removeObject(identicalTo: deselectedBrand)
+        let cell = collectionView.cellForItem(at: indexPath)
+        cell?.layer.borderWidth = 0
         print(selectedBrands)
     }
     
