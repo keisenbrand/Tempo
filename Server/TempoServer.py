@@ -43,26 +43,26 @@ def deleteUser(username):
     return response
 
 
-@app.route("/addUser")
-def addUser():
+@app.route("/addUser/<username>/<userID>/<uerType>/<brandsList>")
+def addUser(username, userID, userType, brandsList):
     # TODO: replace with real data
-    brandsList = []
-    brand = user_pb2.Brand(
-        brand_name='LIFE VR',
-        type='LIFE_VR'
-        )
-    brandsList.append(brand)
+    # brandsList = []
+    # brand = user_pb2.Brand(
+    #     brand_name='LIFE VR',
+    #     type='LIFE_VR'
+    #     )
+    # brandsList.append(brand)
     user = user_pb2.User(
-        username='newbie',
-        userID='n00b',
-        type=user_pb2.User.WRITER,
+        username=username,
+        userID=userID,
+        type=userType,
         brands=brandsList
     )
     response = dynamoDbHelper.table('users') \
         .put(user)
     print(dynamoDbHelper.table('users')
           .get({
-              'username': "newbie"
+              'username': "keisenbrand@gmail.com"
           }, user_pb2.User()))
     return response
 

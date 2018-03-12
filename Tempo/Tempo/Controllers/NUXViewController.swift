@@ -24,7 +24,6 @@ class NUXViewController: UIViewController, UICollectionViewDataSource, UICollect
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        username = "n00b"
         brands = [["brand_name": "Coastal Living", "type": "COASTAL_LIVING"], ["brand_name": "Cooking Light", "type": "COOKING_LIGHT"], ["brand_name": "Entertainment Weekly", "type": "EW"], ["brand_name": "Extra Crispy", "type": "EXTRA_CRISPY"], ["brand_name": "Fansided", "type": "FANSIDED"], ["brand_name": "Food & Wine", "type": "F_AND_W"], ["brand_name": "Fortune", "type": "FORTUNE"], ["brand_name": "Foundry", "type": "FOUNDRY"], ["brand_name": "Health", "type": "HEALTH"], ["brand_name": "Hello Giggles", "type": "HG"], ["brand_name": "InStyle", "type": "INSTYLE"], ["brand_name": "LIFE VR", "type": "LIFE_VR"], ["brand_name": "Money", "type": "MONEY"], ["brand_name": "myrecipes", "type": "MRE"], ["brand_name": "PEOPLE TV", "type": "PEOPLE_TV"], ["brand_name": "PEOPLE", "type": "PEOPLE"], ["brand_name": "People En Español", "type": "PESP"], ["brand_name": "Real Simple", "type": "REAL_SIMPLE"], ["brand_name": "SI Kids", "type": "SI_KIDS"], ["brand_name": "Southern Living", "type": "SOUTHERN_LIVING"], ["brand_name": "Sports Illustrated", "type": "SI"], ["brand_name": "The Drive", "type": "THE_DRIVE"], ["brand_name": "TIME", "type": "TIME"], ["brand_name": "Travel + Leisure", "type": "T_AND_L"]]
     }
     
@@ -35,10 +34,6 @@ class NUXViewController: UIViewController, UICollectionViewDataSource, UICollect
         collectionView.delegate = self
         collectionView.allowsMultipleSelection = true
         collectionView.contentInset = UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
-        print(username)
-        print(userID)
-        print(fullName)
-        print(idToken)
     }
 
     override func didReceiveMemoryWarning() {
@@ -84,7 +79,6 @@ class NUXViewController: UIViewController, UICollectionViewDataSource, UICollect
         selectedBrands.add(selectedBrand)
         let cell = collectionView.cellForItem(at: indexPath)
         cell?.layer.borderWidth = 3
-        print(selectedBrands)
     }
     
     func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
@@ -92,13 +86,14 @@ class NUXViewController: UIViewController, UICollectionViewDataSource, UICollect
         selectedBrands.removeObject(identicalTo: deselectedBrand)
         let cell = collectionView.cellForItem(at: indexPath)
         cell?.layer.borderWidth = 0
-        print(selectedBrands)
     }
     
     @IBAction func donePressed(_ sender: Any) {
-        // save user with brands
-        
-        // segue to home
+        let homeViewController = storyboard?.instantiateViewController(withIdentifier: "HomeViewController") as? HomeViewController
+        for brand in selectedBrands {
+            homeViewController?.bookmarkedBrands.append(brand as! NSDictionary)
+        }
+        navigationController?.pushViewController(homeViewController!, animated: true)
     }
     
     /*
