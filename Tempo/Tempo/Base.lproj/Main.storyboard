@@ -181,7 +181,7 @@
                                     <constraint firstAttribute="width" constant="200" id="plM-vq-icR"/>
                                 </constraints>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="menuCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="47" id="cHN-sr-8Ek" customClass="MenuTableViewCell" customModule="Tempo" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="menuCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="menuCell" rowHeight="47" id="cHN-sr-8Ek" userLabel="menuCell" customClass="MenuTableViewCell" customModule="Tempo" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="200" height="47"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="cHN-sr-8Ek" id="7so-Ro-m0a">
@@ -189,7 +189,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" restorationIdentifier="brandName" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zAv-1t-A9q" userLabel="brandLabel">
-                                                    <rect key="frame" x="15" y="13" width="170" height="21"/>
+                                                    <rect key="frame" x="30" y="11" width="170" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -236,7 +236,7 @@
                         <outlet property="constraintMenuLeft" destination="YW6-Su-Wl0" id="tFu-wI-NyX"/>
                         <outlet property="constraintMenuWidth" destination="plM-vq-icR" id="bR2-Th-Plf"/>
                         <outlet property="gestureScreenEdgePan" destination="H3F-U7-gaq" id="yF8-wz-Cy7"/>
-                        <outlet property="menuView" destination="PsN-c7-kHO" id="qUC-os-Dkd"/>
+                        <outlet property="menuView" destination="PsN-c7-kHO" id="fDX-b1-LTF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -260,34 +260,6 @@
                 </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1556" y="132.68365817091455"/>
-        </scene>
-        <!--Table View Controller-->
-        <scene sceneID="sdb-KJ-H5l">
-            <objects>
-                <tableViewController id="TKn-2m-XXI" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Aw5-QH-ExC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="8bd-D5-G6f">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="8bd-D5-G6f" id="6eb-ZU-QMY">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="TKn-2m-XXI" id="rMl-JV-SM8"/>
-                            <outlet property="delegate" destination="TKn-2m-XXI" id="M9W-HX-zcX"/>
-                        </connections>
-                    </tableView>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="01T-J4-Wm8" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2452" y="144"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="4ME-Hg-dZM">

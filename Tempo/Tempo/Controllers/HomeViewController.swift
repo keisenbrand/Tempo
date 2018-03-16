@@ -9,26 +9,25 @@
 import UIKit
 import GoogleSignIn
 
-class HomeViewController: UIViewController {
+class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
+    @IBOutlet weak var menuView: UITableView!
     @IBOutlet weak var blackView: UIView!
-    @IBOutlet weak var menuView: MenuTableViewController!
     @IBOutlet weak var constraintMenuWidth: NSLayoutConstraint!
     @IBOutlet weak var constraintMenuLeft: NSLayoutConstraint!
     @IBOutlet var gestureScreenEdgePan: UIScreenEdgePanGestureRecognizer!
     
-    var bookmarkedBrands: [NSDictionary] = []
+    var bookmarkedBrands: [Brand]?
     let maxBlackViewAlpha:CGFloat = 0.5
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        menuView.delegate = self
+        menuView.dataSource = self
         constraintMenuLeft.constant = -constraintMenuWidth.constant
-        //menuView.brands = bookmarkedBrands!
-        //self.view.addSubview(menuView.tableView)
         blackView.alpha = 0
         blackView.isHidden = true
-        print("left: %d", constraintMenuLeft.constant)
-        print("width: %d", constraintMenuWidth.constant)
+        print(bookmarkedBrands)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -137,6 +136,24 @@ class HomeViewController: UIViewController {
         print(GIDSignIn.sharedInstance().currentUser)
         let signInViewController = self.navigationController?.viewControllers[0]
         navigationController?.popToViewController(signInViewController!, animated: true)
+    }
+    
+    // MARK: - Table view data source
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 2
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return bookmarkedBrands!.count
+    }
+    
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "menuCell", for: indexPath) as! MenuTableViewCell
+        let brand = bookmarkedBrands![indexPath.row]
+        cell.brandName.text = brand.brandName
+        return cell
     }
     
     override func didReceiveMemoryWarning() {
