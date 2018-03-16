@@ -33,7 +33,7 @@ class HomeViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        print(bookmarkedBrands)
+        //menuView.tableView.backgroundColor = UIColor.red
     }
     
     func openMenu() {

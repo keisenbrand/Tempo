@@ -17,14 +17,24 @@ class NUXViewController: UIViewController, UICollectionViewDataSource, UICollect
     var userID: String?
     var idToken: String?
     var fullName: String?
-    var brands: [NSDictionary]?
+    var brands: [Brand]?
     var selectedBrands: NSMutableArray = []
     let cellHeight: CGFloat = 110
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        brands = [["brand_name": "Coastal Living", "type": "COASTAL_LIVING"], ["brand_name": "Cooking Light", "type": "COOKING_LIGHT"], ["brand_name": "Entertainment Weekly", "type": "EW"], ["brand_name": "Extra Crispy", "type": "EXTRA_CRISPY"], ["brand_name": "Fansided", "type": "FANSIDED"], ["brand_name": "Food & Wine", "type": "F_AND_W"], ["brand_name": "Fortune", "type": "FORTUNE"], ["brand_name": "Foundry", "type": "FOUNDRY"], ["brand_name": "Health", "type": "HEALTH"], ["brand_name": "Hello Giggles", "type": "HG"], ["brand_name": "InStyle", "type": "INSTYLE"], ["brand_name": "LIFE VR", "type": "LIFE_VR"], ["brand_name": "Money", "type": "MONEY"], ["brand_name": "myrecipes", "type": "MRE"], ["brand_name": "PEOPLE TV", "type": "PEOPLE_TV"], ["brand_name": "PEOPLE", "type": "PEOPLE"], ["brand_name": "People En Español", "type": "PESP"], ["brand_name": "Real Simple", "type": "REAL_SIMPLE"], ["brand_name": "SI Kids", "type": "SI_KIDS"], ["brand_name": "Southern Living", "type": "SOUTHERN_LIVING"], ["brand_name": "Sports Illustrated", "type": "SI"], ["brand_name": "The Drive", "type": "THE_DRIVE"], ["brand_name": "TIME", "type": "TIME"], ["brand_name": "Travel + Leisure", "type": "T_AND_L"]]
+        TempoAPIClient.shared.getAllBrands(request: GetAllBrandsRequest(), completion: { [weak self] (response, error) in
+            guard let strongSelf = self, let response = response, error == nil else {
+                print("Error reading brands \(String(describing: error?.localizedDescription))")
+                return
+            }
+
+            strongSelf.brands = response.brands
+            strongSelf.collectionView.reloadData()
+        })
+        
+        /*[["brand_name": "Coastal Living", "type": "COASTAL_LIVING"], ["brand_name": "Cooking Light", "type": "COOKING_LIGHT"], ["brand_name": "Entertainment Weekly", "type": "EW"], ["brand_name": "Extra Crispy", "type": "EXTRA_CRISPY"], ["brand_name": "Fansided", "type": "FANSIDED"], ["brand_name": "Food & Wine", "type": "F_AND_W"], ["brand_name": "Fortune", "type": "FORTUNE"], ["brand_name": "Foundry", "type": "FOUNDRY"], ["brand_name": "Health", "type": "HEALTH"], ["brand_name": "Hello Giggles", "type": "HG"], ["brand_name": "InStyle", "type": "INSTYLE"], ["brand_name": "LIFE VR", "type": "LIFE_VR"], ["brand_name": "Money", "type": "MONEY"], ["brand_name": "myrecipes", "type": "MRE"], ["brand_name": "PEOPLE TV", "type": "PEOPLE_TV"], ["brand_name": "PEOPLE", "type": "PEOPLE"], ["brand_name": "People En Español", "type": "PESP"], ["brand_name": "Real Simple", "type": "REAL_SIMPLE"], ["brand_name": "SI Kids", "type": "SI_KIDS"], ["brand_name": "Southern Living", "type": "SOUTHERN_LIVING"], ["brand_name": "Sports Illustrated", "type": "SI"], ["brand_name": "The Drive", "type": "THE_DRIVE"], ["brand_name": "TIME", "type": "TIME"], ["brand_name": "Travel + Leisure", "type": "T_AND_L"]]*/
     }
     
     override func viewDidLoad() {
@@ -53,9 +63,9 @@ class NUXViewController: UIViewController, UICollectionViewDataSource, UICollect
         cell.layer.borderColor = UIColor(red:0.41, green:0.62, blue:0.93, alpha:1.0).cgColor
         
         let brand = brands![indexPath.row]
-        let brandName = brand.object(forKey: "brand_name") as? String
+        let brandName = brand.brandName
         cell.titleLabel.text = brandName
-        let photo = UIImage(named: brandName!)
+        let photo = UIImage(named: brandName)
         if let photo = photo {
             cell.imageView.image = photo
             cell.imageView.contentMode = .scaleAspectFill
@@ -90,10 +100,22 @@ class NUXViewController: UIViewController, UICollectionViewDataSource, UICollect
     
     @IBAction func donePressed(_ sender: Any) {
         let homeViewController = storyboard?.instantiateViewController(withIdentifier: "HomeViewController") as? HomeViewController
-        for brand in selectedBrands {
-            homeViewController?.bookmarkedBrands.append(brand as! NSDictionary)
+        
+        var req = AddUserRequest()
+        req.brands = brands!
+        req.username = username!
+        req.userID = userID!
+        req.userType = .editor
+        TempoAPIClient.shared.addUser(request: req) { [weak self] (_, error) in
+            guard let strongSelf = self else { return }
+            if let error = error {
+                // Throw some error
+                print("Error adding user \(error.localizedDescription)")
+                return
+            }
+            
+            strongSelf.navigationController?.pushViewController(homeViewController!, animated: true)
         }
-        navigationController?.pushViewController(homeViewController!, animated: true)
     }
     
     /*

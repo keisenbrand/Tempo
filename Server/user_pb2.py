@@ -19,9 +19,8 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='user.proto',
   package='',
   syntax='proto3',
-  serialized_pb=_b('\n\nuser.proto\"\x8f\x01\n\x04User\x12\x10\n\x08username\x18\x01 \x01(\t\x12\x0e\n\x06userID\x18\x02 \x01(\t\x12\x16\n\x06\x62rands\x18\x03 \x03(\x0b\x32\x06.Brand\x12\x1c\n\x04type\x18\x04 \x01(\x0e\x32\x0e.User.UserType\"/\n\x08UserType\x12\x0b\n\x07MANAGER\x10\x00\x12\n\n\x06\x45\x44ITOR\x10\x01\x12\n\n\x06WRITER\x10\x02\"\x86\x03\n\x05\x42rand\x12\x12\n\nbrand_name\x18\x01 \x01(\t\x12\x1e\n\x04type\x18\x02 \x01(\x0e\x32\x10.Brand.BrandType\"\xc8\x02\n\tBrandType\x12\x12\n\x0e\x43OASTAL_LIVING\x10\x00\x12\x11\n\rCOOKING_LIGHT\x10\x01\x12\x06\n\x02\x45W\x10\x02\x12\x10\n\x0c\x45XTRA_CRISPY\x10\x03\x12\x0c\n\x08\x46\x41NSIDED\x10\x04\x12\x0b\n\x07\x46_AND_W\x10\x05\x12\x0b\n\x07\x46ORTUNE\x10\x06\x12\x0b\n\x07\x46OUNDRY\x10\x07\x12\n\n\x06HEALTH\x10\x08\x12\x06\n\x02HG\x10\t\x12\x0b\n\x07INSTYLE\x10\n\x12\x0b\n\x07LIFE_VR\x10\x0b\x12\t\n\x05MONEY\x10\x0c\x12\x07\n\x03MRE\x10\r\x12\r\n\tPEOPLE_TV\x10\x0e\x12\n\n\x06PEOPLE\x10\x0f\x12\x08\n\x04PESP\x10\x10\x12\x0f\n\x0bREAL_SIMPLE\x10\x11\x12\n\n\x06SIKIDS\x10\x12\x12\x13\n\x0fSOUTHERN_LIVING\x10\x13\x12\x06\n\x02SI\x10\x14\x12\r\n\tTHE_DRIVE\x10\x15\x12\x08\n\x04TIME\x10\x16\x12\x0b\n\x07T_AND_L\x10\x17\x62\x06proto3')
+  serialized_pb=_b('\n\nuser.proto\"\x8f\x01\n\x04User\x12\x10\n\x08username\x18\x01 \x01(\t\x12\x0e\n\x06userID\x18\x02 \x01(\t\x12\x16\n\x06\x62rands\x18\x03 \x03(\x0b\x32\x06.Brand\x12\x1c\n\x04type\x18\x04 \x01(\x0e\x32\x0e.User.UserType\"/\n\x08UserType\x12\x0b\n\x07MANAGER\x10\x00\x12\n\n\x06\x45\x44ITOR\x10\x01\x12\n\n\x06WRITER\x10\x02\"\x86\x03\n\x05\x42rand\x12\x12\n\nbrand_name\x18\x01 \x01(\t\x12\x1e\n\x04type\x18\x02 \x01(\x0e\x32\x10.Brand.BrandType\"\xc8\x02\n\tBrandType\x12\x12\n\x0e\x43OASTAL_LIVING\x10\x00\x12\x11\n\rCOOKING_LIGHT\x10\x01\x12\x06\n\x02\x45W\x10\x02\x12\x10\n\x0c\x45XTRA_CRISPY\x10\x03\x12\x0c\n\x08\x46\x41NSIDED\x10\x04\x12\x0b\n\x07\x46_AND_W\x10\x05\x12\x0b\n\x07\x46ORTUNE\x10\x06\x12\x0b\n\x07\x46OUNDRY\x10\x07\x12\n\n\x06HEALTH\x10\x08\x12\x06\n\x02HG\x10\t\x12\x0b\n\x07INSTYLE\x10\n\x12\x0b\n\x07LIFE_VR\x10\x0b\x12\t\n\x05MONEY\x10\x0c\x12\x07\n\x03MRE\x10\r\x12\r\n\tPEOPLE_TV\x10\x0e\x12\n\n\x06PEOPLE\x10\x0f\x12\x08\n\x04PESP\x10\x10\x12\x0f\n\x0bREAL_SIMPLE\x10\x11\x12\n\n\x06SIKIDS\x10\x12\x12\x13\n\x0fSOUTHERN_LIVING\x10\x13\x12\x06\n\x02SI\x10\x14\x12\r\n\tTHE_DRIVE\x10\x15\x12\x08\n\x04TIME\x10\x16\x12\x0b\n\x07T_AND_L\x10\x17\")\n\x15GetCurrentUserRequest\x12\x10\n\x08username\x18\x01 \x01(\t\"-\n\x16GetCurrentUserResponse\x12\x13\n\x04user\x18\x01 \x01(\x0b\x32\x05.User\"\x14\n\x12GetAllUsersRequest\"+\n\x13GetAllUsersResponse\x12\x14\n\x05users\x18\x01 \x03(\x0b\x32\x05.User\"%\n\x11\x44\x65leteUserRequest\x12\x10\n\x08username\x18\x01 \x01(\t\"\x14\n\x12\x44\x65leteUserResponse\"n\n\x0e\x41\x64\x64UserRequest\x12\x10\n\x08username\x18\x01 \x01(\t\x12\x0f\n\x07user_id\x18\x02 \x01(\t\x12!\n\tuser_type\x18\x03 \x01(\x0e\x32\x0e.User.UserType\x12\x16\n\x06\x62rands\x18\x04 \x03(\x0b\x32\x06.Brand\"&\n\x0f\x41\x64\x64UserResponse\x12\x13\n\x04user\x18\x01 \x01(\x0b\x32\x05.User\"f\n\x11UpdateUserRequest\x12\x10\n\x08username\x18\x01 \x01(\t\x12\x1d\n\rbrands_to_add\x18\x02 \x03(\x0b\x32\x06.Brand\x12 \n\x10\x62rands_to_remove\x18\x03 \x03(\x0b\x32\x06.Brand\")\n\x12UpdateUserResponse\x12\x13\n\x04user\x18\x01 \x01(\x0b\x32\x05.User\"\x15\n\x13GetAllBrandsRequest\".\n\x14GetAllBrandsResponse\x12\x16\n\x06\x62rands\x18\x01 \x03(\x0b\x32\x06.Brandb\x06proto3')
 )
-_sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 
 
@@ -175,28 +174,28 @@ _USER = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='userID', full_name='User.userID', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='brands', full_name='User.brands', index=2,
       number=3, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='type', full_name='User.type', index=3,
       number=4, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -228,14 +227,14 @@ _BRAND = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='type', full_name='Brand.type', index=1,
       number=2, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -253,13 +252,421 @@ _BRAND = _descriptor.Descriptor(
   serialized_end=551,
 )
 
+
+_GETCURRENTUSERREQUEST = _descriptor.Descriptor(
+  name='GetCurrentUserRequest',
+  full_name='GetCurrentUserRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='username', full_name='GetCurrentUserRequest.username', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=553,
+  serialized_end=594,
+)
+
+
+_GETCURRENTUSERRESPONSE = _descriptor.Descriptor(
+  name='GetCurrentUserResponse',
+  full_name='GetCurrentUserResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='user', full_name='GetCurrentUserResponse.user', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=596,
+  serialized_end=641,
+)
+
+
+_GETALLUSERSREQUEST = _descriptor.Descriptor(
+  name='GetAllUsersRequest',
+  full_name='GetAllUsersRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=643,
+  serialized_end=663,
+)
+
+
+_GETALLUSERSRESPONSE = _descriptor.Descriptor(
+  name='GetAllUsersResponse',
+  full_name='GetAllUsersResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='users', full_name='GetAllUsersResponse.users', index=0,
+      number=1, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=665,
+  serialized_end=708,
+)
+
+
+_DELETEUSERREQUEST = _descriptor.Descriptor(
+  name='DeleteUserRequest',
+  full_name='DeleteUserRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='username', full_name='DeleteUserRequest.username', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=710,
+  serialized_end=747,
+)
+
+
+_DELETEUSERRESPONSE = _descriptor.Descriptor(
+  name='DeleteUserResponse',
+  full_name='DeleteUserResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=749,
+  serialized_end=769,
+)
+
+
+_ADDUSERREQUEST = _descriptor.Descriptor(
+  name='AddUserRequest',
+  full_name='AddUserRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='username', full_name='AddUserRequest.username', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='user_id', full_name='AddUserRequest.user_id', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='user_type', full_name='AddUserRequest.user_type', index=2,
+      number=3, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='brands', full_name='AddUserRequest.brands', index=3,
+      number=4, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=771,
+  serialized_end=881,
+)
+
+
+_ADDUSERRESPONSE = _descriptor.Descriptor(
+  name='AddUserResponse',
+  full_name='AddUserResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='user', full_name='AddUserResponse.user', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=883,
+  serialized_end=921,
+)
+
+
+_UPDATEUSERREQUEST = _descriptor.Descriptor(
+  name='UpdateUserRequest',
+  full_name='UpdateUserRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='username', full_name='UpdateUserRequest.username', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='brands_to_add', full_name='UpdateUserRequest.brands_to_add', index=1,
+      number=2, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='brands_to_remove', full_name='UpdateUserRequest.brands_to_remove', index=2,
+      number=3, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=923,
+  serialized_end=1025,
+)
+
+
+_UPDATEUSERRESPONSE = _descriptor.Descriptor(
+  name='UpdateUserResponse',
+  full_name='UpdateUserResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='user', full_name='UpdateUserResponse.user', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1027,
+  serialized_end=1068,
+)
+
+
+_GETALLBRANDSREQUEST = _descriptor.Descriptor(
+  name='GetAllBrandsRequest',
+  full_name='GetAllBrandsRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1070,
+  serialized_end=1091,
+)
+
+
+_GETALLBRANDSRESPONSE = _descriptor.Descriptor(
+  name='GetAllBrandsResponse',
+  full_name='GetAllBrandsResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='brands', full_name='GetAllBrandsResponse.brands', index=0,
+      number=1, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1093,
+  serialized_end=1139,
+)
+
 _USER.fields_by_name['brands'].message_type = _BRAND
 _USER.fields_by_name['type'].enum_type = _USER_USERTYPE
 _USER_USERTYPE.containing_type = _USER
 _BRAND.fields_by_name['type'].enum_type = _BRAND_BRANDTYPE
 _BRAND_BRANDTYPE.containing_type = _BRAND
+_GETCURRENTUSERRESPONSE.fields_by_name['user'].message_type = _USER
+_GETALLUSERSRESPONSE.fields_by_name['users'].message_type = _USER
+_ADDUSERREQUEST.fields_by_name['user_type'].enum_type = _USER_USERTYPE
+_ADDUSERREQUEST.fields_by_name['brands'].message_type = _BRAND
+_ADDUSERRESPONSE.fields_by_name['user'].message_type = _USER
+_UPDATEUSERREQUEST.fields_by_name['brands_to_add'].message_type = _BRAND
+_UPDATEUSERREQUEST.fields_by_name['brands_to_remove'].message_type = _BRAND
+_UPDATEUSERRESPONSE.fields_by_name['user'].message_type = _USER
+_GETALLBRANDSRESPONSE.fields_by_name['brands'].message_type = _BRAND
 DESCRIPTOR.message_types_by_name['User'] = _USER
 DESCRIPTOR.message_types_by_name['Brand'] = _BRAND
+DESCRIPTOR.message_types_by_name['GetCurrentUserRequest'] = _GETCURRENTUSERREQUEST
+DESCRIPTOR.message_types_by_name['GetCurrentUserResponse'] = _GETCURRENTUSERRESPONSE
+DESCRIPTOR.message_types_by_name['GetAllUsersRequest'] = _GETALLUSERSREQUEST
+DESCRIPTOR.message_types_by_name['GetAllUsersResponse'] = _GETALLUSERSRESPONSE
+DESCRIPTOR.message_types_by_name['DeleteUserRequest'] = _DELETEUSERREQUEST
+DESCRIPTOR.message_types_by_name['DeleteUserResponse'] = _DELETEUSERRESPONSE
+DESCRIPTOR.message_types_by_name['AddUserRequest'] = _ADDUSERREQUEST
+DESCRIPTOR.message_types_by_name['AddUserResponse'] = _ADDUSERRESPONSE
+DESCRIPTOR.message_types_by_name['UpdateUserRequest'] = _UPDATEUSERREQUEST
+DESCRIPTOR.message_types_by_name['UpdateUserResponse'] = _UPDATEUSERRESPONSE
+DESCRIPTOR.message_types_by_name['GetAllBrandsRequest'] = _GETALLBRANDSREQUEST
+DESCRIPTOR.message_types_by_name['GetAllBrandsResponse'] = _GETALLBRANDSRESPONSE
+_sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 User = _reflection.GeneratedProtocolMessageType('User', (_message.Message,), dict(
   DESCRIPTOR = _USER,
@@ -274,6 +681,90 @@ Brand = _reflection.GeneratedProtocolMessageType('Brand', (_message.Message,), d
   # @@protoc_insertion_point(class_scope:Brand)
   ))
 _sym_db.RegisterMessage(Brand)
+
+GetCurrentUserRequest = _reflection.GeneratedProtocolMessageType('GetCurrentUserRequest', (_message.Message,), dict(
+  DESCRIPTOR = _GETCURRENTUSERREQUEST,
+  __module__ = 'user_pb2'
+  # @@protoc_insertion_point(class_scope:GetCurrentUserRequest)
+  ))
+_sym_db.RegisterMessage(GetCurrentUserRequest)
+
+GetCurrentUserResponse = _reflection.GeneratedProtocolMessageType('GetCurrentUserResponse', (_message.Message,), dict(
+  DESCRIPTOR = _GETCURRENTUSERRESPONSE,
+  __module__ = 'user_pb2'
+  # @@protoc_insertion_point(class_scope:GetCurrentUserResponse)
+  ))
+_sym_db.RegisterMessage(GetCurrentUserResponse)
+
+GetAllUsersRequest = _reflection.GeneratedProtocolMessageType('GetAllUsersRequest', (_message.Message,), dict(
+  DESCRIPTOR = _GETALLUSERSREQUEST,
+  __module__ = 'user_pb2'
+  # @@protoc_insertion_point(class_scope:GetAllUsersRequest)
+  ))
+_sym_db.RegisterMessage(GetAllUsersRequest)
+
+GetAllUsersResponse = _reflection.GeneratedProtocolMessageType('GetAllUsersResponse', (_message.Message,), dict(
+  DESCRIPTOR = _GETALLUSERSRESPONSE,
+  __module__ = 'user_pb2'
+  # @@protoc_insertion_point(class_scope:GetAllUsersResponse)
+  ))
+_sym_db.RegisterMessage(GetAllUsersResponse)
+
+DeleteUserRequest = _reflection.GeneratedProtocolMessageType('DeleteUserRequest', (_message.Message,), dict(
+  DESCRIPTOR = _DELETEUSERREQUEST,
+  __module__ = 'user_pb2'
+  # @@protoc_insertion_point(class_scope:DeleteUserRequest)
+  ))
+_sym_db.RegisterMessage(DeleteUserRequest)
+
+DeleteUserResponse = _reflection.GeneratedProtocolMessageType('DeleteUserResponse', (_message.Message,), dict(
+  DESCRIPTOR = _DELETEUSERRESPONSE,
+  __module__ = 'user_pb2'
+  # @@protoc_insertion_point(class_scope:DeleteUserResponse)
+  ))
+_sym_db.RegisterMessage(DeleteUserResponse)
+
+AddUserRequest = _reflection.GeneratedProtocolMessageType('AddUserRequest', (_message.Message,), dict(
+  DESCRIPTOR = _ADDUSERREQUEST,
+  __module__ = 'user_pb2'
+  # @@protoc_insertion_point(class_scope:AddUserRequest)
+  ))
+_sym_db.RegisterMessage(AddUserRequest)
+
+AddUserResponse = _reflection.GeneratedProtocolMessageType('AddUserResponse', (_message.Message,), dict(
+  DESCRIPTOR = _ADDUSERRESPONSE,
+  __module__ = 'user_pb2'
+  # @@protoc_insertion_point(class_scope:AddUserResponse)
+  ))
+_sym_db.RegisterMessage(AddUserResponse)
+
+UpdateUserRequest = _reflection.GeneratedProtocolMessageType('UpdateUserRequest', (_message.Message,), dict(
+  DESCRIPTOR = _UPDATEUSERREQUEST,
+  __module__ = 'user_pb2'
+  # @@protoc_insertion_point(class_scope:UpdateUserRequest)
+  ))
+_sym_db.RegisterMessage(UpdateUserRequest)
+
+UpdateUserResponse = _reflection.GeneratedProtocolMessageType('UpdateUserResponse', (_message.Message,), dict(
+  DESCRIPTOR = _UPDATEUSERRESPONSE,
+  __module__ = 'user_pb2'
+  # @@protoc_insertion_point(class_scope:UpdateUserResponse)
+  ))
+_sym_db.RegisterMessage(UpdateUserResponse)
+
+GetAllBrandsRequest = _reflection.GeneratedProtocolMessageType('GetAllBrandsRequest', (_message.Message,), dict(
+  DESCRIPTOR = _GETALLBRANDSREQUEST,
+  __module__ = 'user_pb2'
+  # @@protoc_insertion_point(class_scope:GetAllBrandsRequest)
+  ))
+_sym_db.RegisterMessage(GetAllBrandsRequest)
+
+GetAllBrandsResponse = _reflection.GeneratedProtocolMessageType('GetAllBrandsResponse', (_message.Message,), dict(
+  DESCRIPTOR = _GETALLBRANDSRESPONSE,
+  __module__ = 'user_pb2'
+  # @@protoc_insertion_point(class_scope:GetAllBrandsResponse)
+  ))
+_sym_db.RegisterMessage(GetAllBrandsResponse)
 
 
 # @@protoc_insertion_point(module_scope)
