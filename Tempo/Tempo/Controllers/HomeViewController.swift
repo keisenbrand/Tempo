@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import GoogleSignIn
 
 class HomeViewController: UIViewController {
     
@@ -16,11 +17,14 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var constraintMenuLeft: NSLayoutConstraint!
     @IBOutlet var gestureScreenEdgePan: UIScreenEdgePanGestureRecognizer!
     
+    var bookmarkedBrands: [NSDictionary] = []
     let maxBlackViewAlpha:CGFloat = 0.5
     
     override func viewDidLoad() {
         super.viewDidLoad()
         constraintMenuLeft.constant = -constraintMenuWidth.constant
+        //menuView.brands = bookmarkedBrands!
+        //self.view.addSubview(menuView.tableView)
         blackView.alpha = 0
         blackView.isHidden = true
         print("left: %d", constraintMenuLeft.constant)
@@ -29,16 +33,10 @@ class HomeViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        let username = "keisenbrand";
-        TempoAPIClient.shared.getCurrentUser(username: username) { user in
-            if let user = user {
-                self.configure(user)
-            }
-        }
+        //menuView.tableView.backgroundColor = UIColor.red
     }
     
     func openMenu() {
-        print("openMenu()")
         constraintMenuLeft.constant = 0
         blackView.isHidden = false
         
@@ -51,7 +49,6 @@ class HomeViewController: UIViewController {
     }
     
     func hideMenu() {
-        print("hideMenu()")
         constraintMenuLeft.constant = -constraintMenuWidth.constant
         
         UIView.animate(withDuration: 0.3, animations: {
@@ -133,6 +130,13 @@ class HomeViewController: UIViewController {
     
     func configure(_ user: User) { // 2
 
+    }
+    
+    @IBAction func didTapSignOut(_ sender: Any) {
+        GIDSignIn.sharedInstance().disconnect()
+        print(GIDSignIn.sharedInstance().currentUser)
+        let signInViewController = self.navigationController?.viewControllers[0]
+        navigationController?.popToViewController(signInViewController!, animated: true)
     }
     
     override func didReceiveMemoryWarning() {

@@ -10,17 +10,19 @@
 		1E8BD7DD06EB078D51461857 /* Pods_Tempo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AE58DDAD4E3512A148BE953 /* Pods_Tempo.framework */; };
 		9C02F556203CD31000F28582 /* NUXViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C02F555203CD31000F28582 /* NUXViewController.swift */; };
 		9C02F55B203CD94800F28582 /* BrandCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C02F55A203CD94800F28582 /* BrandCell.swift */; };
+		9C1CD1F62059FF64002A1B3F /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C1CD1F52059FF64002A1B3F /* NetworkClient.swift */; };
+		9C1CD202205A260A002A1B3F /* user.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C1CD201205A2609002A1B3F /* user.pb.swift */; };
 		9C4EC6542020D84700642DC6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4EC6532020D84700642DC6 /* AppDelegate.swift */; };
 		9C4EC6562020D84700642DC6 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4EC6552020D84700642DC6 /* HomeViewController.swift */; };
 		9C4EC6592020D84700642DC6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C4EC6572020D84700642DC6 /* Main.storyboard */; };
 		9C4EC65B2020D84700642DC6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9C4EC65A2020D84700642DC6 /* Assets.xcassets */; };
 		9C4EC65E2020D84700642DC6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C4EC65C2020D84700642DC6 /* LaunchScreen.storyboard */; };
-		9C4EC6672021089400642DC6 /* user.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4EC6662021089400642DC6 /* user.pb.swift */; };
 		9C4EC66A2028C8A300642DC6 /* TempoAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4EC6692028C8A300642DC6 /* TempoAPIClient.swift */; };
 		9C4EC66C2028CB7A00642DC6 /* user+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4EC66B2028CB7A00642DC6 /* user+extension.swift */; };
 		9C4EC67020290E1B00642DC6 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4EC66F20290E1B00642DC6 /* SignInViewController.swift */; };
 		9C4EC672202A0D6200642DC6 /* awsconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = 9C4EC671202A0D6200642DC6 /* awsconfiguration.json */; };
 		9C872F4D2044931C00710E4C /* MenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C872F4C2044931C00710E4C /* MenuTableViewController.swift */; };
+		9C872F4F2054820E00710E4C /* MenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C872F4E2054820E00710E4C /* MenuTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		2AE58DDAD4E3512A148BE953 /* Pods_Tempo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tempo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C02F555203CD31000F28582 /* NUXViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NUXViewController.swift; sourceTree = "<group>"; };
 		9C02F55A203CD94800F28582 /* BrandCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrandCell.swift; sourceTree = "<group>"; };
+		9C1CD1F52059FF64002A1B3F /* NetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClient.swift; sourceTree = "<group>"; };
+		9C1CD201205A2609002A1B3F /* user.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = user.pb.swift; sourceTree = "<group>"; };
 		9C4EC6502020D84700642DC6 /* Tempo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tempo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C4EC6532020D84700642DC6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9C4EC6552020D84700642DC6 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -35,12 +39,12 @@
 		9C4EC65A2020D84700642DC6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9C4EC65D2020D84700642DC6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9C4EC65F2020D84700642DC6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9C4EC6662021089400642DC6 /* user.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = user.pb.swift; sourceTree = "<group>"; };
 		9C4EC6692028C8A300642DC6 /* TempoAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempoAPIClient.swift; sourceTree = "<group>"; };
 		9C4EC66B2028CB7A00642DC6 /* user+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "user+extension.swift"; sourceTree = "<group>"; };
 		9C4EC66F20290E1B00642DC6 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		9C4EC671202A0D6200642DC6 /* awsconfiguration.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = awsconfiguration.json; sourceTree = "<group>"; };
 		9C872F4C2044931C00710E4C /* MenuTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTableViewController.swift; sourceTree = "<group>"; };
+		9C872F4E2054820E00710E4C /* MenuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTableViewCell.swift; sourceTree = "<group>"; };
 		9E16A3166590AC94923725F7 /* Pods-Tempo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tempo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Tempo/Pods-Tempo.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -68,8 +72,26 @@
 			isa = PBXGroup;
 			children = (
 				9C02F55A203CD94800F28582 /* BrandCell.swift */,
+				9C872F4E2054820E00710E4C /* MenuTableViewCell.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		9C1CD1F32059FF41002A1B3F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				9C1CD1F42059FF4B002A1B3F /* Networking */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		9C1CD1F42059FF4B002A1B3F /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				9C4EC6692028C8A300642DC6 /* TempoAPIClient.swift */,
+				9C1CD1F52059FF64002A1B3F /* NetworkClient.swift */,
+			);
+			path = Networking;
 			sourceTree = "<group>";
 		};
 		9C4EC6472020D84700642DC6 = {
@@ -93,6 +115,7 @@
 		9C4EC6522020D84700642DC6 /* Tempo */ = {
 			isa = PBXGroup;
 			children = (
+				9C1CD1F32059FF41002A1B3F /* Models */,
 				9C02F557203CD51E00F28582 /* Views */,
 				9C4EC671202A0D6200642DC6 /* awsconfiguration.json */,
 				9C4EC6682028C88500642DC6 /* Controllers */,
@@ -102,7 +125,6 @@
 				9C4EC65A2020D84700642DC6 /* Assets.xcassets */,
 				9C4EC65C2020D84700642DC6 /* LaunchScreen.storyboard */,
 				9C4EC65F2020D84700642DC6 /* Info.plist */,
-				9C4EC6692028C8A300642DC6 /* TempoAPIClient.swift */,
 			);
 			path = Tempo;
 			sourceTree = "<group>";
@@ -110,7 +132,7 @@
 		9C4EC6652021087C00642DC6 /* Protocol Buffer Objects */ = {
 			isa = PBXGroup;
 			children = (
-				9C4EC6662021089400642DC6 /* user.pb.swift */,
+				9C1CD201205A2609002A1B3F /* user.pb.swift */,
 				9C4EC66B2028CB7A00642DC6 /* user+extension.swift */,
 			);
 			path = "Protocol Buffer Objects";
@@ -277,15 +299,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9C4EC6672021089400642DC6 /* user.pb.swift in Sources */,
 				9C02F55B203CD94800F28582 /* BrandCell.swift in Sources */,
+				9C1CD1F62059FF64002A1B3F /* NetworkClient.swift in Sources */,
 				9C4EC66C2028CB7A00642DC6 /* user+extension.swift in Sources */,
 				9C02F556203CD31000F28582 /* NUXViewController.swift in Sources */,
+				9C872F4F2054820E00710E4C /* MenuTableViewCell.swift in Sources */,
 				9C4EC67020290E1B00642DC6 /* SignInViewController.swift in Sources */,
 				9C872F4D2044931C00710E4C /* MenuTableViewController.swift in Sources */,
 				9C4EC6562020D84700642DC6 /* HomeViewController.swift in Sources */,
 				9C4EC6542020D84700642DC6 /* AppDelegate.swift in Sources */,
 				9C4EC66A2028C8A300642DC6 /* TempoAPIClient.swift in Sources */,
+				9C1CD202205A260A002A1B3F /* user.pb.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
