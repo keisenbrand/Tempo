@@ -73,4 +73,30 @@ dict18 = {'brand_name': 'Real Simple',
           'type': 'REAL_SIMPLE'
           }
 
-brands = [dict1, dict2, dict3, dict4, dict5, dict6, dict7, dict8, dict9]
+dict19 = {'brand_name': 'SI Kids',
+          'type': 'SIKIDS'
+          }
+
+dict20 = {'brand_name': 'Southern Living',
+          'type': 'SOUTHERN_LIVING'
+          }
+
+dict21 = {'brand_name': 'Sports Illustrated',
+          'type': 'SI'
+          }
+
+dict22 = {'brand_name': 'The Drive',
+          'type': 'THE_DRIVE'
+          }
+
+dict23 = {'brand_name': 'TIME',
+          'type': 'TIME'
+          }
+
+dict24 = {'brand_name': 'Travel + Leisure',
+          'type': 'T_AND_L'
+          }
+
+brands = [dict1, dict2, dict3, dict4, dict5, dict6, dict7, dict8, dict9,
+          dict10, dict11, dict12, dict13, dict14, dict15, dict16, dict17,
+          dict18, dict19, dict20, dict21, dict22, dict23, dict24]
