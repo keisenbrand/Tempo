@@ -100,6 +100,8 @@ class NUXViewController: UIViewController, UICollectionViewDataSource, UICollect
     
     @IBAction func donePressed(_ sender: Any) {
         let homeViewController = storyboard?.instantiateViewController(withIdentifier: "HomeViewController") as? HomeViewController
+        let bookmarks = selectedBrands as! [Brand]
+        homeViewController?.bookmarkedBrands = bookmarks
         
         var req = AddUserRequest()
         req.brands = brands!
